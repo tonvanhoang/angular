@@ -1,0 +1,17 @@
+/* container-comment */
+.container-comment h4{
+    font-size: 28px;
+}
+.container-comment .btn-comment button{
+    transition: all 1s;
+    width: 120px;
+    margin-right: 20px;
+}
+.container-comment .btn-comment button a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.container-comment .btn-comment button:hover a{
+    color: white;
+}

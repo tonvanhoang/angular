@@ -1,0 +1,23 @@
+
+.ul-admin{
+    margin-top: 25px;
+}
+.ul-admin li{
+    list-style: none;
+    padding: 7px 0px;
+    transition: all 0.5s;
+}
+.ul-admin li:hover{
+    background-color: #d2d2d2;
+    cursor: pointer;
+}
+.ul-admin li a{
+    text-decoration: none;
+    color: #d2d2d2;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.ul-admin li:hover a{
+    color: black;
+    font-weight: 500;
+}

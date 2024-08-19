@@ -1,0 +1,25 @@
+
+/* bottom */
+.container-bottom-left{
+    width: 23%;
+    height: 100vh;
+    background-color: #333;
+}
+.container-bottom-right{
+    width: 77%;
+    height: 100vh;
+}
+.container-bottom-right .content-con{
+    width: 90%;
+    margin: 50px auto;
+    border: 1px solid #d2d2d2;
+    height: 85vh;
+}
+.cart{
+    width: 90%;
+    margin: auto;
+}
+/* product */
+.cart .overflow-auto{
+    max-height: 70vh;
+}

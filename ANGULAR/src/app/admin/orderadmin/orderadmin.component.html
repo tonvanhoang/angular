@@ -1,0 +1,68 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+  <div class="container-bottom d-flex">
+    <div class="container-bottom-left">
+      <app-navleftadmin></app-navleftadmin>
+    </div>
+    <div class="container-bottom-right border">
+      <div class="content-con">
+        <div class="cart container m-auto">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="my-4">Order Management</h4>
+            <button class="btn btn-outline-dark btn-addproduct">
+              <a class="nav-link" routerLink="/showformaddaccount" routerLinkActive="active" ariaCurrentWhenActive="page">Add new products</a>
+            </button>
+          </div>
+          <div class="overflow-auto" id="showform">
+            <table class="table caption-top">
+              <thead>
+                <tr>
+                  <th scope="col-3">Order information</th>
+                  <th scope="col-2">Name</th>
+                  <th scope="col-2">Phone Number</th>
+                  <th scope="col-2">Address</th>
+                  <th scope="col-1">Date</th>
+                  <th scope="col-2">Status</th>
+                  <th scope="col-1">Other</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let ord of orders">
+                  <td class="pro-info">
+                    <div class="img">
+                      <img [src]="ord.acc?.avata" alt="Avatar">
+                    </div>
+                    <div>
+                      <a class="tenpro">{{ord.acc?.name}}</a>
+                      <i>ID order: {{ord._id}}</i>
+                    </div>
+                  </td>
+                  <td>
+                    <a>{{ord.name}}</a>
+                  </td>
+                  <td>
+                    <a>{{ord.phonenumber}}</a>
+                  </td>
+                  <td>
+                    <a>{{ord.address}}</a>
+                  </td>
+                  <td>
+                    <a>{{ord.date}}</a>
+                  </td>
+                  <td>
+                    <a>{{ord.status}}</a>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-outline-danger mt-2">
+                      <a class="nav-link" routerLink="/status/{{ord._id}}" routerLinkActive="active" ariaCurrentWhenActive="page">Edit</a>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<app-nav></app-nav>
+<div class="container container-account p-0 my-5">
+    <div class="theh3">
+        <h4 class="text-center m-0 my-2">SIGN IN</h4>
+    </div>
+    <form class="mx-4 mt-3" [formGroup]="formlogin" (ngSubmit)="clickform()">
+        <div class="mb-2">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" id="email" name="email" >
+          <span *ngIf="!formlogin.get('email')?.valid && formlogin.get('email')?.touched" class="text-danger">Invalid email, please re-enter</span>
+        </div>
+
+        <div class="mb-2">
+            <label for="password" class="form-label">password</label>
+            <input type="password" class="form-control" formControlName="password" id="password" name="password" >
+            <span *ngIf="!formlogin.get('password')?.valid && formlogin.get('password')?.touched" class="text-danger">Invalid password, please re-enter</span>
+
+          </div>
+        <div class="text-center mb-4">
+            <button type="submit" class="btn btn-outline-dark">Sign In</button>
+        </div>
+    </form>
+ </div>

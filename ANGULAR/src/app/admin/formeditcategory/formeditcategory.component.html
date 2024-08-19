@@ -1,0 +1,30 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+    <div class="container-bottom d-flex">
+        <div class="container-bottom-left">
+            <app-navleftadmin></app-navleftadmin>
+        </div>
+        <div class="container-bottom-right border">
+            <div class="content-con">
+                <div class="cart container m-auto"> <!-- css chổ này-->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="my-4">Category Management</h4>
+                    </div>
+                   <!--  -->
+                  <div id="form" class="overflow-auto">
+                  <form>
+                        <div class="mb-3" *ngIf="cate">
+                            <label for="name" class="form-label">Name category:</label>
+                            <input type="text" class="form-control" [(ngModel)]="cate.name"  name="name" id="name">
+                        </div>
+                        <div class="text-center my-4">
+                            <button type="submit" id="btn-add" class="btn btn-outline-dark" (click)="edit(id)">Edit category</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

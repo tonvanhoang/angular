@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+<div class="container container-payment py-5">
+  <form (ngSubmit)="addorder()">
+    <h4 class="text-center">Payment</h4>
+    <div class="row">
+      <!-- left -->
+      <div class="col-7">
+        <h5 class="text-center mb-4">Delivery information</h5>
+        <div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Consignee name</label>
+            <input type="text" class="form-control" [(ngModel)]="order.name" id="name" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="phonenumber" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" [(ngModel)]="order.phonenumber" id="phonenumber" name="phonenumber">
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" class="form-control" [(ngModel)]="order.address" id="address" name="address">
+          </div>
+          <div class="text-center btnsaveaddress">
+            <button type="submit" class="btn btn-outline-dark my-3">Pay immediately</button>
+          </div>
+        </div>
+      </div>
+      <!-- right -->
+      <div class="payment-right overflow-auto col-5">
+        <div class="payment-right-top">
+          <h5 class="text-center mb-4">Payment products</h5>
+          <div class="my-3">
+            <div class="chia2ben my-2">
+              <span>Subtotal</span><span>1000USD</span>
+            </div>
+            <div class="chia2ben my-2">
+              <span>Delivery/Shipping</span><span>20USD</span>
+            </div>
+            <div class="gach-payment">
+              <div class="chia2ben my-2">
+                <span>Total</span><span>1020USD</span>
+              </div>
+            </div>
+            <div *ngFor="let item of orders">
+              <div class="payment-right-bottom d-flex my-4">
+                <div class="img">
+                  <img [src]="item.img" alt="{{ item.name }}">
+                </div>
+                <div class="product">
+                  <a class="fw-bold text-black">{{ item.name }}</a>
+                  <a>Size: 37</a>
+                  <a>Color: red</a>
+                  <a>Quantity: {{ item.selectedQuantity }}</a>
+                  <a>Price: {{ item.price }}USD</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

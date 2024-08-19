@@ -1,0 +1,62 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+    <div class="container-bottom d-flex">
+        <div class="container-bottom-left">
+            <app-navleftadmin></app-navleftadmin>
+        </div>
+        <div class="container-bottom-right border">
+            <div class="content-con">
+                <div class="cart container m-auto"> <!-- css chổ này-->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="my-4">Product Management</h4>
+                    </div>
+                   <!--  -->
+                  <div id="form" class="overflow-auto">
+                    <form *ngIf="pro">
+                        <div class="mb-3 d-flex justify-content-between" >
+                            <div>
+                                <label for="name" class="form-label">Name product</label>
+                                <input type="text" style="width:500px;" [(ngModel)]="pro.name" class="form-control" name="name" id="name">
+                            </div>
+                            <div>
+                            <label for="category" class="form-label">Category</label>
+                            <select style="width:350px;" class="form-select" [(ngModel)]="pro.id_cate" name="id_cate" id="category" aria-label="Default select example">
+                                <option  *ngFor="let cate of categories" [ngValue]="cate._id">
+                                    {{cate.name}}
+                                </option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <label for="price" class="form-label">Price</label>
+                                <input type="text" style="width:260px;" [(ngModel)]="pro.price" class="form-control" name="price" id="price">
+                            </div>
+                            <div>
+                                <label for="quantity" class="form-label">Quantity</label>
+                                <input type="text" style="width:260px;" class="form-control" [(ngModel)]="pro.quantity" name="quantity" id="quantity">
+                            </div>
+                            <div>
+                                <label for="img" class="form-label">Image</label>
+                            <input type="text" style="width:260px;" class="form-control" [(ngModel)]="pro.img" name="img" id="img">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="shortdescription" class="form-label">Short description</label>
+                            <textarea type="text" class="form-control" [(ngModel)]="pro.short_description" name="short_description" id="shortdescription"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea type="text" class="form-control" [(ngModel)]="pro.description" name="description" id="description"></textarea>
+                        </div>
+                        <div class="text-center my-4">
+                        <button type="submit" id="btn-add" class="btn btn-outline-dark"  (click)="edit(id)" >Edit product</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

@@ -1,0 +1,53 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+    <div class="container-bottom d-flex">
+        <div class="container-bottom-left">
+            <app-navleftadmin></app-navleftadmin>
+        </div>
+        <div class="container-bottom-right border">
+            <div class="content-con">
+                <div class="cart container m-auto"> <!-- css chổ này-->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="my-4">Account Management</h4>
+                    </div>
+                   <!--  -->
+                  <div id="form" class="overflow-auto">
+                    <form *ngIf="acc">
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <label for="name" class="form-label">Name product</label>
+                                <input type="text" style="width:500px;" [(ngModel)]="acc.name" class="form-control" name="name" id="name">
+                            </div>
+                            <div>
+                                <label for="role" class="form-label">Role</label>
+                            <select style="width:350px;" class="form-select" [(ngModel)]="acc.role" name="role" id="role" aria-label="Default select example">
+                                <option value="admin">admin</option>
+                                <option value="user">user</option>
+                            </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div>
+                                <label for="price" class="form-label">Password</label>
+                                <input type="password" style="width:260px;" [(ngModel)]="acc.password" class="form-control" name="password" id="password">
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="text" style="width:260px;" class="form-control" [(ngModel)]="acc.email" name="email" id="email">
+                            </div>
+                            <div>
+                                <label for="avata" class="form-label">Image</label>
+                            <input type="text" style="width:260px;" class="form-control" [(ngModel)]="acc.avata" name="avata" id="avata">
+                            </div>
+                        </div>
+                        <div class="text-center my-4">
+                        <button type="submit" id="btn-add" class="btn btn-outline-dark" (click)="edit(id)">Edit account</button>
+                        </div>
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

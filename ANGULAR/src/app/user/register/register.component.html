@@ -1,0 +1,30 @@
+<app-nav></app-nav>
+<div class="container container-account p-0 my-5" >
+    <div class="theh3">
+        <h4 class="text-center m-0 my-2">SIGN UP</h4>
+    </div>
+    <form class="mx-4 mt-3" [formGroup]="register">
+        <div class="mb-2">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" [(ngModel)]="account.name" formControlName="name" id="name" name="name" >
+            <span *ngIf="!register.get('name')?.valid && register.get('name')?.touched" class="text-danger">Invalid name, please re-enter</span>
+          </div>
+        <div class="mb-2">
+          <label for="exampleInputEmail1" class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="account.email" formControlName="email" id="email" name="email" >
+          <span *ngIf="!register.get('email')?.valid && register.get('email')?.touched" class="text-danger">Invalid email, please re-enter</span>
+        </div>
+        <div class="mb-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" formControlName="password" [(ngModel)]="account.password" id="password" name="password" >
+            <span *ngIf="!register.get('email')?.valid && register.get('email')?.touched" class="text-danger">Invalid email, please re-enter</span>
+          </div>
+          <!-- <div class="mb-2">
+            <label for="password" class="form-label">Enter the password</label>
+            <input type="password" class="form-control" id="password" name="password" >
+          </div> -->
+        <div class="text-center mb-4">
+            <button type="submit" class="btn btn-outline-dark" (click)="clickform()">Sign Up</button>
+        </div>
+    </form>
+ </div>

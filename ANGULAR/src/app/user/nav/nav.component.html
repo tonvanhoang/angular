@@ -1,0 +1,58 @@
+<nav id="navbar_HT_home" class="navbar navbar-expand-lg bg-white container py-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="logoshop" href="#">HT Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/allproducts" routerLinkActive="active" ariaCurrentWhenActive="page">All products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Kids</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sale</a>
+          </li>
+          <li class="account-navbar nav-item li-con">
+            <a class="nav-link dropdown" href="login.html">Account <i class="fa-solid fa-user"></i></a>
+            <ul class="con-ul-account p-0 d-block">
+              <li class="nav-item">
+                <div ></div>
+              </li>
+              <li class="nav-item">
+                <a id="showacc" class="nav-link p-0 mt-0" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Sign In</a>
+              </li>
+              <li class="nav-item">
+                <a id="showacc" class="nav-link p-0 mt-0" routerLink="/myorder" routerLinkActive="active" ariaCurrentWhenActive="page">My order</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link p-0 mt-1" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Sign Up</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link p-0 mt-1" href="#" (click)="logout()">Sign Out</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/cart" routerLinkActive="active" ariaCurrentWhenActive="page">Cart <i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

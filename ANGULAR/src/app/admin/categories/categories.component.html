@@ -1,0 +1,44 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+    <div class="container-bottom d-flex">
+        <div class="container-bottom-left">
+            <app-navleftadmin></app-navleftadmin>
+        </div>
+        <div class="container-bottom-right border">
+            <div class="content-con">
+                <div class="cart container m-auto">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="my-4">Category Management</h4>
+                        <button class="btn btn-outline-dark btn-addproduct"><a class="nav-link" routerLink="/showformaddcategory" routerLinkActive="active" ariaCurrentWhenActive="page">Add new categories</a></button>
+                    </div>
+                    <div class="overflow-auto" id="showform">
+                        <table class="table caption-top">
+                            <thead>
+                              <tr>
+                                <th scope="col-3">ID</th>
+                                <th scope="col-2">Name</th>
+                                <th scope="col-2">Other</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let cate of categories">
+                                <td>
+                                    <a>{{cate._id}}</a>
+                                </td>
+                                <td>
+                                    <a>{{cate.name}}</a>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-danger" (click)="deletecategory(cate._id)">Delete</button>
+                                    <br>
+                                    <button type="button" class="btn btn-outline-danger mt-2"><a class="nav-link" routerLink="/showformeditcategory/{{cate._id}}" routerLinkActive="active" ariaCurrentWhenActive="page">Edit</a></button>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

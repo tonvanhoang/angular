@@ -1,0 +1,38 @@
+<app-navtopadmin></app-navtopadmin>
+<div class="">
+    <div class="container-bottom d-flex">
+        <div class="container-bottom-left">
+            <app-navleftadmin></app-navleftadmin>
+        </div>
+        <div class="container-bottom-right border">
+            <div class="content-con">
+                <div class="cart container m-auto"> <!-- css chổ này-->
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h4 class="my-4">Order Management</h4>
+                    </div>
+                   <!--  -->
+                   <div id="form" class="overflow-auto" *ngIf="ord">
+                    <form (ngSubmit)="updateorder(id)">
+                      <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="ord.status" name="status" id="status">
+                          <option selected>Open this select menu</option>
+                          <option value="Awaiting confirmation">Awaiting confirmation</option>
+                          <option value="Order confirmation">Order confirmation</option>
+                          <option value="Is on its way to you">Is on its way to you</option>
+                        </select>
+                      </div>
+                      <a>id: {{ord._id}} của tao</a>
+                      <div class="text-center my-4">
+                        <button type="submit" id="btn-add" class="btn btn-outline-dark">Update status</button>
+                      </div>
+                    </form>
+                  </div>
+                  
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    

@@ -1,0 +1,7 @@
+.cart #showform tr th{
+    text-align: center;
+}
+.cart #showform tr td{
+    width: 200px;
+    text-align: center;
+}

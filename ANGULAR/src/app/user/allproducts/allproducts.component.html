@@ -1,0 +1,96 @@
+<app-nav></app-nav>
+<div id="all-product" class="container-fluid p-0 py-5">
+    <div class="row m-auto">
+        <!-- left -->
+        <div class="col-2 p-0 overflow-auto">
+            <h3>All Product</h3>
+            <div class="gachsp candivleft">
+                <div *ngFor="let cate of categories">
+                    <a routerLink="/productbycategory/{{cate._id}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{cate.name}}</a>
+                </div>            
+            </div>
+            <div class="gachsp candivleft">
+                    <a class="dropdown-toggle m-0 py-3" data-bs-toggle="collapse" href="#collapseGender" aria-expanded="false" aria-controls="collapseExample">Gender</a>
+                  <div class="collapse" id="collapseGender">
+                    <div class="candivleft m-auto">
+                        <a href="#">Men</a>
+                        <a href="#">Women</a>
+                        <a href="#">Kid</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="gachsp candivleft">
+                <a class="dropdown-toggle m-0 py-3" data-bs-toggle="collapse" href="#collapsePrice" aria-expanded="false" aria-controls="collapseExample">Product By Price</a>
+              <div class="collapse" id="collapsePrice">
+                <div class="candivleft m-auto">
+                    <a href="#">50USD - 100USD</a>
+                    <a href="#">100USD - 300USD</a>
+                    <a href="#">300USD - 500USD</a>
+                    <a href="#">500USD - 1000USD</a>
+                    <a href="#">1000USD - 3000USD</a>
+                </div>
+              </div>
+        </div>
+        <div class="gachsp candivleft">
+            <a class="dropdown-toggle m-0 py-3" data-bs-toggle="collapse" href="#collapseColor" aria-expanded="false" aria-controls="collapseExample">Product By Color</a>
+          <div class="collapse" id="collapseColor">
+            <div class="candivleft m-auto">
+                <a href="#">Black</a>
+                <a href="#">Blue</a>
+                <a href="#">Red</a>
+                <a href="#">White</a>
+                <a href="#">Green</a>
+                <a href="#">Pink</a>
+                <a href="#">Purple</a>
+                <a href="#">Yellow</a>
+                <a href="#">Orange</a>
+                <a href="#">Grey</a>
+                <a href="#">Brown</a>
+            </div>
+          </div>
+    </div>
+    <div class="gachsp candivleft">
+        <a class="dropdown-toggle m-0 py-3" data-bs-toggle="collapse" href="#collapseBrand" aria-expanded="false" aria-controls="collapseExample">Product By Brand</a>
+      <div class="collapse" id="collapseBrand">
+        <div class="candivleft m-auto">
+            <a href="#">Nike Sportswear</a>
+            <a href="#">Chanel</a>
+            <a href="#">Gucci</a>
+            <a href="#">Adidas</a>
+        </div>
+      </div>
+        </div>
+        <div class="gachsp candivleft">
+            <a class="dropdown-toggle m-0 py-3" data-bs-toggle="collapse" href="#collapseSport" aria-expanded="false" aria-controls="collapseExample">Sport</a>
+        <div class="collapse" id="collapseSport">
+            <div class="candivleft m-auto">
+                <a href="#">Lifestyle</a>
+                <a href="#">Golf</a>
+            </div>
+        </div>
+        </div>
+        </div>
+        <!-- right -->
+        <div class="col-10 p-0 m-auto">
+                <div class="item" *ngFor="let pro of products | paginate: { itemsPerPage: 9, currentPage: currentPageIndex }">
+                    <div class="img">
+                        <img src="{{pro.img}}" alt="...">
+                    </div>
+                    <div class="consanpham">
+                        <a routerLink="/detail/{{pro._id}}" routerLinkActive="active" ariaCurrentWhenActive="page">{{pro.name}}</a>
+                        <label for="">Quantity:<i> {{pro.quantity}}</i> </label>
+                        <label for="">Price: <span>{{pro.price}}</span>USD <del>200USD</del> </label>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div id="phantrang" class="row m-auto d-block">
+        <div class="col-12">
+            <ul class="pagination justify-content-center mt-1">
+                <li class="page-item" *ngFor="let page of pagesArray()" (click)="onPageIndexClicked(page)" [ngClass]="{ 'active': page === currentPageIndex }">
+                    <a (click)="false" class="page-link">{{ page }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

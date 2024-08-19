@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="container my-5">
+    <div class="cart container m-auto"> <!-- css chổ này-->
+        <div class="d-flex justify-content-between align-items-center">
+            <h4 class="my-4"> My order</h4>
+            <button class="btn btn-outline-dark btn-addproduct"><a class="nav-link" routerLink="/showformaddaccount" routerLinkActive="active" ariaCurrentWhenActive="page">Add new products</a></button>
+        </div>
+        <div id="showform">
+            <table class="table caption-top">
+                <thead>
+                  <tr>
+                    <th scope="col-3">ID order</th>
+                    <th scope="col-2">Date</th>
+                    <th scope="col-2">Goods receive name</th>
+                    <th scope="col-2">Address</th>
+                    <th scope="col-2">Phone Number</th>
+                    <th scope="col-2">Status</th>
+                    <th scope="col-1">Other</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let ord of order">
+                    <td class="pro-info">
+                        <div>
+                            <a class="tenpro"></a>
+                            <i>{{ord._id}}</i>
+                        </div>
+                    </td>
+                    <td>
+                        <a>{{ord.date}}</a>
+                      </td>
+                      <td>
+                        <a>{{ord.name}}</a>
+                      </td>
+                    <td style="width: 200px;">
+                        <a>{{ord.address}}</a>
+                    </td>
+                    <td>
+                        <a>{{ord.phonenumber}}</a>
+                    </td>
+                    <td>
+                        <a>{{ord.status}}</a>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-danger mt-2"><a class="nav-link">View</a></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

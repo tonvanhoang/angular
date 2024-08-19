@@ -1,0 +1,71 @@
+<app-nav></app-nav>
+<div class="detailproduct m-auto my-5">
+    <div class="row" *ngIf="product">
+        <div class="col-6 pe-0">
+            <div class="img">
+                <img [src]="product.img" alt="">
+            </div>
+        </div>
+        <div class="col-6 p-0 col6-right">
+            <div class="consanpham m-auto py-4">
+                <a class="theatensp">{{product.name}}</a>
+                <label class="lb" for="">Quantity: <i>{{product.quantity}}</i> </label>
+                <label class="lb" for="">Price: <span class="thespan_price">{{product.price}}</span>USD <del>200USD</del> </label>
+                <label class="lb" for="">Short description: <span class="thespan_p">{{product.short_description}}</span> </label>
+                <label for="" class="lb"><a data-bs-toggle="modal" data-bs-target="#exampleModal-productdescription">Click to see product description</a></label>
+                
+                <div class="modal fade" id="exampleModal-productdescription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5">Product Description</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <a>{{product.description}}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="size">
+                    <label class="lb" for="">Size: </label>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">35</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">36</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">37</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">38</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">39</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">40</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">41</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">42</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">43</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">44</a></button>
+                    </div>
+                </div>
+                <div class="color">
+                    <label for="" class="lb">Color: </label>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Red</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Blue</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">White</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Pink</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Yellow</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Black</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Orange</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Green</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Grey</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Brown</a></button>
+                        <button type="button" class="btn btn-outline-secondary"><a href="#">Purple</a></button>
+                    </div>
+                </div>
+                <div class="quantity">
+                    <label for="quantity" class="lb">Select Quantity:</label>
+                    <input type="number" id="quantity" name="quantity" [(ngModel)]="selectedQuantity" min="1" class="form-control">
+                </div>
+                <div class="btn-addtocart mt-3">
+                    <button type="button" class="btn btn-outline-dark" (click)="addcart()">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-comment></app-comment>
